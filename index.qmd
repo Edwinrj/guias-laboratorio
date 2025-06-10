@@ -1,0 +1,142 @@
+---
+title: "Guía de Laboratorio: Introducción a GNU Radio"
+author: "Edwin Ríos"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+    callout-appearance: simple
+---
+
+# 🛰️ Introducción
+
+GNU Radio es una herramienta de desarrollo de software libre que permite diseñar, simular y probar sistemas de procesamiento de señales en tiempo real. En esta guía, aprenderás a instalarlo, conocerás su entorno, y trabajarás con bloques básicos para dar tus primeros pasos con radios definidas por software (SDR).
+
+::: {.callout-note title="Objetivo"}
+Familiarizarte con la instalación, interfaz y uso básico de GNU Radio para preparar tus propios experimentos con SDR.
+:::
+
+---
+
+# 🧰 Instalación de GNU Radio en Ubuntu
+
+## Opción 1: Desde repositorio (más fácil, pero puede estar desactualado)
+
+```bash
+sudo apt update
+sudo apt install gnuradio -y
+```
+
+## Opción 2: Desde PyBOMBS (recomendado para versiones más recientes)
+
+```bash
+sudo apt install git python3-pip python3-venv
+pip install --user pybombs
+pybombs auto-config
+pybombs recipes add-defaults
+pybombs prefix init ~/gnuradio -a myprefix -R gnuradio-default
+```
+
+::: {.callout-warning title="Nota"}
+La instalación desde PyBOMBS puede tardar más de una hora, dependiendo de tu conexión y equipo.
+:::
+
+---
+
+# 🖥️ Primer vistazo a GNU Radio Companion (GRC)
+
+## ¿Cómo iniciar?
+
+```bash
+gnuradio-companion
+```
+
+## Interfaz
+
+- **Editor de flujo**: donde conectas bloques.
+- **Paleta de bloques**: a la derecha.
+- **Panel de propiedades**: editar parámetros del bloque seleccionado.
+
+## Bloques esenciales
+
+- `Signal Source`
+- `Throttle`
+- `Scope Sink`
+- `QT GUI Sink`
+
+::: {.callout-tip title="Sugerencia"}
+Comienza con un flujo que conecte un `Signal Source` a un `QT GUI Sink` y visualiza una onda senoidal.
+:::
+
+---
+
+# 🔧 Proyecto de ejemplo
+
+```{.python}
+# Este es el equivalente en Python del flujo básico
+from gnuradio import gr, blocks, analog
+
+top_block = gr.top_block()
+src = analog.sig_source_f(32000, analog.GR_SIN_WAVE, 1000, 1, 0)
+throttle = blocks.throttle(gr.sizeof_float, 32000)
+snk = blocks.null_sink(gr.sizeof_float)
+
+top_block.connect(src, throttle, snk)
+top_block.run()
+```
+
+---
+
+# 🧱 Categorías de bloques útiles
+
+## Fuentes
+- `Signal Source`
+- `Noise Source`
+- `File Source`
+
+## Procesamiento
+- `Multiply`
+- `Add`
+- `Low Pass Filter`
+
+## Visualización
+- `QT GUI Time Sink`
+- `QT GUI Frequency Sink`
+- `QT GUI Waterfall Sink`
+
+## Control
+- `Slider`
+- `Check Box`
+- `Variable`
+
+::: {.callout-important title="Explora"}
+Puedes crear interfaces interactivas con sliders, cuadros de selección y otras herramientas gráficas.
+:::
+
+---
+
+# 📚 Recursos adicionales
+
+- [Documentación oficial](https://wiki.gnuradio.org/index.php/Main_Page)
+- [Tutoriales de GNU Radio en YouTube](https://www.youtube.com/results?search_query=gnu+radio+tutorial)
+- [Repositorio de ejemplos](https://github.com/gnuradio/gnuradio)
+- [📥 Descargar PDF de esta guía](downloads/index.pdf){.btn .btn-primary}
+
+
+---
+
+# ✅ Conclusión
+
+GNU Radio es una herramienta poderosa, ideal para explorar el mundo del procesamiento de señales y la radio definida por software. Esta guía te proporciona una base sobre la que puedes seguir construyendo, integrando tus propios módulos o trabajando con hardware como el RTL-SDR.
+
+::: {.callout-success title="¿Qué sigue?"}
+Explora la recepción de señales FM, transmisión de datos digitales o la integración con Python para análisis más avanzados.
+:::
+
+---
+
+
+_Hecho con ❤️ por Edwin usando Quarto._

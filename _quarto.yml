@@ -1,0 +1,18 @@
+project:
+  type: website
+  resources:
+    - downloads/index.pdf
+website:
+  title: "Guías de Laboratorio"
+  navbar:
+    left:
+      - text: "Inicio"
+        file: index.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+  pdf:
+    documentclass: article
+    toc: true
