@@ -13,6 +13,8 @@ format:
   html:
     theme: cosmo
     toc: true
+    include-after-body: includes/footer.html
   pdf:
     documentclass: article
     toc: true
+

@@ -136,7 +136,8 @@ GNU Radio es una herramienta poderosa, ideal para explorar el mundo del procesam
 Explora la recepción de señales FM, transmisión de datos digitales o la integración con Python para análisis más avanzados.
 :::
 
----
-
-
 _Hecho con ❤️ por Edwin usando Quarto._
+
+---
+# 💬 Comentarios
+---
