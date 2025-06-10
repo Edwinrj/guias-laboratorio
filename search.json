@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Guía de Laboratorio: Introducción a GNU Radio",
+    "section": "",
+    "text": "GNU Radio es una herramienta de desarrollo de software libre que permite diseñar, simular y probar sistemas de procesamiento de señales en tiempo real. En esta guía, aprenderás a instalarlo, conocerás su entorno, y trabajarás con bloques básicos para dar tus primeros pasos con radios definidas por software (SDR).\n\n\n\n\n\n\nObjetivo\n\n\n\nFamiliarizarte con la instalación, interfaz y uso básico de GNU Radio para preparar tus propios experimentos con SDR."
+  },
+  {
+    "objectID": "index.html#opción-1-desde-repositorio-más-fácil-pero-puede-estar-desactualado",
+    "href": "index.html#opción-1-desde-repositorio-más-fácil-pero-puede-estar-desactualado",
+    "title": "Guía de Laboratorio: Introducción a GNU Radio",
+    "section": "Opción 1: Desde repositorio (más fácil, pero puede estar desactualado)",
+    "text": "Opción 1: Desde repositorio (más fácil, pero puede estar desactualado)\nsudo apt update\nsudo apt install gnuradio -y"
+  },
+  {
+    "objectID": "index.html#opción-2-desde-pybombs-recomendado-para-versiones-más-recientes",
+    "href": "index.html#opción-2-desde-pybombs-recomendado-para-versiones-más-recientes",
+    "title": "Guía de Laboratorio: Introducción a GNU Radio",
+    "section": "Opción 2: Desde PyBOMBS (recomendado para versiones más recientes)",
+    "text": "Opción 2: Desde PyBOMBS (recomendado para versiones más recientes)\nsudo apt install git python3-pip python3-venv\npip install --user pybombs\npybombs auto-config\npybombs recipes add-defaults\npybombs prefix init ~/gnuradio -a myprefix -R gnuradio-default\n\n\n\n\n\n\nNota\n\n\n\nLa instalación desde PyBOMBS puede tardar más de una hora, dependiendo de tu conexión y equipo."
+  },
+  {
+    "objectID": "index.html#cómo-iniciar",
+    "href": "index.html#cómo-iniciar",
+    "title": "Guía de Laboratorio: Introducción a GNU Radio",
+    "section": "¿Cómo iniciar?",
+    "text": "¿Cómo iniciar?\ngnuradio-companion"
+  },
+  {
+    "objectID": "index.html#interfaz",
+    "href": "index.html#interfaz",
+    "title": "Guía de Laboratorio: Introducción a GNU Radio",
+    "section": "Interfaz",
+    "text": "Interfaz\n\nEditor de flujo: donde conectas bloques.\nPaleta de bloques: a la derecha.\nPanel de propiedades: editar parámetros del bloque seleccionado."
+  },
+  {
+    "objectID": "index.html#bloques-esenciales",
+    "href": "index.html#bloques-esenciales",
+    "title": "Guía de Laboratorio: Introducción a GNU Radio",
+    "section": "Bloques esenciales",
+    "text": "Bloques esenciales\n\nSignal Source\nThrottle\nScope Sink\nQT GUI Sink\n\n\n\n\n\n\n\nSugerencia\n\n\n\nComienza con un flujo que conecte un Signal Source a un QT GUI Sink y visualiza una onda senoidal."
+  },
+  {
+    "objectID": "index.html#fuentes",
+    "href": "index.html#fuentes",
+    "title": "Guía de Laboratorio: Introducción a GNU Radio",
+    "section": "Fuentes",
+    "text": "Fuentes\n\nSignal Source\nNoise Source\nFile Source"
+  },
+  {
+    "objectID": "index.html#procesamiento",
+    "href": "index.html#procesamiento",
+    "title": "Guía de Laboratorio: Introducción a GNU Radio",
+    "section": "Procesamiento",
+    "text": "Procesamiento\n\nMultiply\nAdd\nLow Pass Filter"
+  },
+  {
+    "objectID": "index.html#visualización",
+    "href": "index.html#visualización",
+    "title": "Guía de Laboratorio: Introducción a GNU Radio",
+    "section": "Visualización",
+    "text": "Visualización\n\nQT GUI Time Sink\nQT GUI Frequency Sink\nQT GUI Waterfall Sink"
+  },
+  {
+    "objectID": "index.html#control",
+    "href": "index.html#control",
+    "title": "Guía de Laboratorio: Introducción a GNU Radio",
+    "section": "Control",
+    "text": "Control\n\nSlider\nCheck Box\nVariable\n\n\n\n\n\n\n\nExplora\n\n\n\nPuedes crear interfaces interactivas con sliders, cuadros de selección y otras herramientas gráficas."
+  }
+]
